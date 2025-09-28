@@ -12,9 +12,7 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-muted mb-4">
           {siteConfig.weddingDate}
         </p>
-        <p className="text-lg md:text-xl text-muted mb-8">
-          {siteConfig.venue}
-        </p>
+        <p className="text-lg md:text-xl text-muted mb-8">{siteConfig.venue}</p>
         <p className="text-base text-muted mb-8 max-w-2xl mx-auto">
           Scroll to Begin Our Journey
         </p>

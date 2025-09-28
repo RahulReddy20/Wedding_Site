@@ -13,9 +13,17 @@ interface CardProps {
 
 export default function Card({ children, className, imageHeader }: CardProps) {
   return (
-    <div className={clsx('bg-card-bg rounded-2xl shadow-sm border border-gray-100 overflow-hidden', className)}>
+    <div
+      className={clsx(
+        'bg-card-bg rounded-2xl shadow-sm border border-gray-100 overflow-hidden',
+        className
+      )}
+    >
       {imageHeader && (
-        <div className="relative" style={{ height: imageHeader.height || '200px' }}>
+        <div
+          className="relative"
+          style={{ height: imageHeader.height || '200px' }}
+        >
           <img
             src={imageHeader.src}
             alt={imageHeader.alt}
@@ -23,9 +31,7 @@ export default function Card({ children, className, imageHeader }: CardProps) {
           />
         </div>
       )}
-      <div className="p-6">
-        {children}
-      </div>
+      <div className="p-6">{children}</div>
     </div>
   );
 }

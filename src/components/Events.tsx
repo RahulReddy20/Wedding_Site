@@ -18,14 +18,16 @@ export default function Events() {
                 </h3>
                 <p className="text-lg text-muted mb-2">{event.date}</p>
                 <p className="text-lg text-muted mb-4">{event.time}</p>
-                <p className="text-xl font-semibold text-text mb-2">{event.venue}</p>
+                <p className="text-xl font-semibold text-text mb-2">
+                  {event.venue}
+                </p>
                 <p className="text-muted mb-4">{event.address}</p>
                 <p className="text-muted mb-6">{event.dressCode}</p>
                 <p className="text-base text-muted mb-6 max-w-2xl mx-auto">
                   {event.description}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   onClick={() => window.open(event.mapUrl, '_blank')}
                 >
                   View on Map

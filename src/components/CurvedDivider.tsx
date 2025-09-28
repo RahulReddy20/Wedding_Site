@@ -1,5 +1,3 @@
 export default function CurvedDivider() {
-  return (
-    <div className="curved-divider" />
-  );
+  return <div className="curved-divider" />;
 }

@@ -11,10 +11,11 @@ export default function Rsvp() {
         </h2>
         <Card className="p-8">
           <p className="text-lg text-muted mb-8">
-            We can't wait to celebrate with you! Please let us know if you'll be joining us for our special day.
+            We can't wait to celebrate with you! Please let us know if you'll be
+            joining us for our special day.
           </p>
-          <Button 
-            variant="primary" 
+          <Button
+            variant="primary"
             size="lg"
             onClick={() => window.open(siteConfig.rsvpUrl, '_blank')}
           >

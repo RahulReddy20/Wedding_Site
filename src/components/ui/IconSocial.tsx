@@ -8,7 +8,12 @@ interface IconSocialProps {
   className?: string;
 }
 
-export default function IconSocial({ children, href, ariaLabel, className }: IconSocialProps) {
+export default function IconSocial({
+  children,
+  href,
+  ariaLabel,
+  className,
+}: IconSocialProps) {
   return (
     <a
       href={href}

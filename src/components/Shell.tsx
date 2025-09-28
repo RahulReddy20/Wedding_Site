@@ -6,9 +6,5 @@ interface ShellProps {
 }
 
 export default function Shell({ children, className = '' }: ShellProps) {
-  return (
-    <div className={`site-shell ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`site-shell ${className}`}>{children}</div>;
 }

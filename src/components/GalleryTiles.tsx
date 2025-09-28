@@ -13,7 +13,10 @@ interface GalleryTilesProps {
   className?: string;
 }
 
-export default function GalleryTiles({ tiles, className = '' }: GalleryTilesProps) {
+export default function GalleryTiles({
+  tiles,
+  className = '',
+}: GalleryTilesProps) {
   return (
     <div className={`space-y-4 ${className}`}>
       {tiles.map((tile) => (
@@ -27,7 +30,9 @@ export default function GalleryTiles({ tiles, className = '' }: GalleryTilesProp
               />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-sm font-medium text-text truncate">{tile.title}</h3>
+              <h3 className="text-sm font-medium text-text truncate">
+                {tile.title}
+              </h3>
               {tile.description && (
                 <p className="text-xs text-muted mt-1">{tile.description}</p>
               )}

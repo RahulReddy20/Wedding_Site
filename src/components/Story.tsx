@@ -19,7 +19,9 @@ export default function Story() {
                 />
               </div>
               <h3 className="text-xl font-bold mb-2 text-text">{item.title}</h3>
-              <p className="text-lg font-semibold text-primary mb-3">{item.year}</p>
+              <p className="text-lg font-semibold text-primary mb-3">
+                {item.year}
+              </p>
               <p className="text-muted">{item.description}</p>
             </Card>
           ))}

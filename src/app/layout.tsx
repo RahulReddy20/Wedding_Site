@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
+import TopNav from '@/components/TopNav';
 import './globals.css';
 
 const playfairDisplay = Playfair_Display({
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <div className="site-page">
           <div className="site-shell">
+            <TopNav />
             <main className="site-content">{children}</main>
           </div>
         </div>

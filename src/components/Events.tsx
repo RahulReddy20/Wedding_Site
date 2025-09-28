@@ -1,3 +1,5 @@
+'use client';
+
 import { siteConfig } from '@/lib/siteConfig';
 import Card from './ui/Card';
 import Button from './ui/Button';

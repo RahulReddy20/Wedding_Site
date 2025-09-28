@@ -1,3 +1,5 @@
+'use client';
+
 import { siteConfig } from '@/lib/siteConfig';
 import Button from './ui/Button';
 import Card from './ui/Card';
@@ -11,7 +13,7 @@ export default function Rsvp() {
         </h2>
         <Card className="p-8">
           <p className="text-lg text-muted mb-8">
-            We can't wait to celebrate with you! Please let us know if you'll be
+            We can&apos;t wait to celebrate with you! Please let us know if you&apos;ll be
             joining us for our special day.
           </p>
           <Button

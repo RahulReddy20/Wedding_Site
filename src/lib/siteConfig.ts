@@ -1,91 +1,88 @@
-export interface Event {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  venue: string;
-  address: string;
-  dressCode: string;
-  description: string;
-  mapUrl: string;
-}
-
-export interface StoryItem {
-  id: string;
-  title: string;
-  year: string;
-  description: string;
-  image: string;
-  alt: string;
-}
-
-export interface GalleryTile {
-  id: string;
-  title: string;
-  image: string;
-  alt: string;
-  description?: string;
-}
-
-export interface FeaturedVenue {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  alt: string;
-  location: string;
-}
-
-export interface SiteConfig {
-  coupleName: string;
-  weddingDate: string;
-  venue: string;
-  events: Event[];
-  storyItems: StoryItem[];
-  galleryTiles: GalleryTile[];
-  featuredVenues: FeaturedVenue[];
-  rsvpUrl: string;
-}
+import { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  coupleName: 'Jessica & Michael',
-  weddingDate: 'October 26, 2026',
-  venue: 'Napa Valley, California',
+  coupleName: 'Harsha & Rishika',
+  weddingDate: 'November 26, 2025',
+  venue: 'Hyderabad, Telangana',
   events: [
     {
-      id: 'welcome-reception',
-      title: 'Welcome Reception',
-      date: 'October 25, 2026',
-      time: '6:00 PM - 9:00 PM',
-      venue: 'The Estate Yountville',
-      address: '6475 Washington St, Yountville, CA 94599',
+      id: 'sangeet',
+      title: 'Sangeet',
+      dateTime: 'November 16, 2025 from 7 PM onwards',
+      venueName: 'Ashva retreat',
+      address: 'Hyderabad, TS',
       dressCode: 'Cocktail Attire',
       description:
         'Join us for an intimate welcome reception to kick off our wedding weekend.',
-      mapUrl: 'https://maps.google.com/?q=The+Estate+Yountville+Yountville+CA',
+      mapQuery: 'Ashva retreat, Hyderabad, Telangana',
+      imageUrl: '/images/events/welcome-reception.jpg',
     },
     {
-      id: 'ceremony',
-      title: 'The Ceremony',
-      date: 'October 26, 2026',
-      time: '4:00 PM - 5:00 PM',
-      venue: 'Castello di Amorosa',
-      address: '4045 St Helena Hwy, Calistoga, CA 94515',
-      dressCode: 'Black-Tie Optional',
+      id: 'haldi',
+      title: 'Haldi Ceremony',
+      dateTime: 'November 24, 2025 from 7 AM onwards',
+      venueName: 'Home',
+      address: 'Jangareddygudem, AP',
+      dressCode: 'Women: Pink , Men: Pistah Green Kurta',
       description:
         'Our wedding ceremony will take place in the beautiful castle courtyard.',
-      mapUrl: 'https://maps.google.com/?q=Castello+di+Amorosa+Calistoga+CA',
+      mapQuery: '17.093364, 81.279088',
+      imageUrl: '/images/events/haldi.jpg',
+    },
+    {
+      id: 'wedding-ceremony',
+      title: 'Wedding Ceremony',
+      dateTime: 'November 26, 2025 at 9:21 AM',
+      venueName: 'Taj Krishna Banjara Hills',
+      address: 'Hyderabad, TS',
+      dressCode: 'Black-Tie Optional',
+      description: 'Dinner, dancing, and celebration in the grand ballroom.',
+      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      imageUrl: '/images/events/reception.jpg',
     },
     {
       id: 'reception',
-      title: 'The Celebration',
-      date: 'October 26, 2026',
-      time: '6:00 PM - 11:00 PM',
-      venue: 'Castello di Amorosa',
-      address: '4045 St Helena Hwy, Calistoga, CA 94515',
+      title: 'Reception',
+      dateTime: 'November 30, 2025 from 7 PM onwards',
+      venueName: 'Home',
+      address: 'Jangareddygudem, AP',
       dressCode: 'Black-Tie Optional',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
-      mapUrl: 'https://maps.google.com/?q=Castello+di+Amorosa+Calistoga+CA',
+      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      imageUrl: '/images/events/reception.jpg',
+    },
+    {
+      id: 'pellikoduku',
+      title: 'Pellikoduku',
+      dateTime: 'November 23, 2025 from 9 AM onwards',
+      venueName: 'Home',
+      address: 'Jangareddygudem, AP',
+      dressCode: 'Indian Attire Pastel Colors',
+      description: 'Dinner, dancing, and celebration in the grand ballroom.',
+      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      imageUrl: '/images/events/reception.jpg',
+    },
+    {
+      id: 'gajula-veduka',
+      title: 'గాజుల వేడుక',
+      dateTime: 'November 23, 2025 from 6 PM onwards',
+      venueName: 'Home',
+      address: 'Jangareddygudem, AP',
+      dressCode: 'Indian Attire',
+      description: 'Dinner, dancing, and celebration in the grand ballroom.',
+      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      imageUrl: '/images/events/gajulu.jpg',
+    },
+    {
+      id: 'mehandi',
+      title: 'Mehandi',
+      dateTime: 'November 24, 2025 from 6 PM onwards',
+      venueName: 'Home',
+      address: 'Jangareddygudem, AP',
+      dressCode: 'Kalankari Pattern',
+      description: 'Dinner, dancing, and celebration in the grand ballroom.',
+      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      imageUrl: '/images/events/mehandi.jpg',
     },
   ],
   storyItems: [
@@ -95,8 +92,7 @@ export const siteConfig: SiteConfig = {
       year: '2019',
       description:
         'We first met at a coffee shop in San Francisco during a rainy afternoon.',
-      image: '/images/story/met.jpg',
-      alt: 'Jessica and Michael meeting at a coffee shop',
+      imageUrl: '/images/story/met.jpg',
     },
     {
       id: 'engagement',
@@ -104,8 +100,7 @@ export const siteConfig: SiteConfig = {
       year: '2024',
       description:
         'Michael proposed during a sunset hike in Big Sur with the Pacific Ocean as our backdrop.',
-      image: '/images/story/engagement.jpg',
-      alt: 'Engagement photo at Big Sur',
+      imageUrl: '/images/story/engagement.jpg',
     },
     {
       id: 'favorite-adventure',
@@ -113,43 +108,67 @@ export const siteConfig: SiteConfig = {
       year: '2023',
       description:
         'Our trip to Italy where we fell in love with the country and decided to have our wedding there.',
-      image: '/images/story/italy.jpg',
-      alt: 'Jessica and Michael in Italy',
+      imageUrl: '/images/story/italy.jpg',
     },
   ],
-  galleryTiles: [
+  galleryItems: [
     {
       id: 'photography',
       title: 'Photography',
-      image: '/images/gallery/photography.jpg',
-      alt: 'Wedding photography service',
-      description: 'Capturing your special moments',
+      imageUrl: '/images/gallery/photography.jpg',
+      size: 'large',
     },
     {
       id: 'ceremony',
       title: 'Ceremony',
-      image: '/images/gallery/ceremony.jpg',
-      alt: 'Wedding ceremony service',
-      description: 'Beautiful ceremony planning',
+      imageUrl: '/images/gallery/ceremony.jpg',
+      size: 'small',
     },
     {
       id: 'wedding-design',
       title: 'Wedding Design',
-      image: '/images/gallery/design.jpg',
-      alt: 'Wedding design service',
-      description: 'Elegant wedding design',
+      imageUrl: '/images/gallery/design.jpg',
+      size: 'small',
+    },
+    {
+      id: 'florals',
+      title: 'Florals',
+      imageUrl: '/images/gallery/florals.jpg',
+      size: 'large',
+    },
+    {
+      id: 'catering',
+      title: 'Catering',
+      imageUrl: '/images/gallery/catering.jpg',
+      size: 'small',
+    },
+    {
+      id: 'music',
+      title: 'Music',
+      imageUrl: '/images/gallery/music.jpg',
+      size: 'small',
     },
   ],
-  featuredVenues: [
+  testimonials: [
     {
-      id: 'villa-balbianello',
-      name: 'Villa Balbianello',
-      description:
-        'A stunning lakeside villa with breathtaking views of Lake Como.',
-      image: '/images/venues/villa-balbianello.jpg',
-      alt: 'Villa Balbianello on Lake Como',
-      location: 'Lake Como, Italy',
+      id: 'testimonial-1',
+      text: "Dianne and Michael are the perfect couple. Their love story is truly inspiring and we can't wait to celebrate their special day.",
+      author: 'Sarah & David',
+      avatar: '/images/testimonials/sarah-david.jpg',
+    },
+    {
+      id: 'testimonial-2',
+      text: "We've known them for years and couldn't be happier to see them tie the knot. Their wedding will be absolutely beautiful.",
+      author: 'Emily & James',
+      avatar: '/images/testimonials/emily-james.jpg',
+    },
+    {
+      id: 'testimonial-3',
+      text: "Dianne and Michael's love is pure and genuine. We're so excited to be part of their journey together.",
+      author: 'Lisa & Mark',
+      avatar: '/images/testimonials/lisa-mark.jpg',
     },
   ],
   rsvpUrl: 'https://forms.google.com/rsvp',
+  registryUrl: 'https://registry.example.com',
 };

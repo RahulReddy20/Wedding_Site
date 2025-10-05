@@ -1,15 +1,30 @@
 @import 'tailwindcss';
 
+/* Animation classes */
+.animate-fade-in-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 :root {
-  --page-bg: #f5f7f3; /* pale green-ish page background */
-  --card-bg: #ffffff; /* inset site card background */
-  --text: #2f3430; /* dark charcoal */
-  --muted: #7a847b; /* muted text */
-  --primary: #9aa998; /* dusty sage green (primary accent) */
-  --accent: #c9a78c; /* subtle rose-gold accent */
-  --footer-bg: #4f544f; /* dark muted footer */
-  --background: #ffffff;
-  --foreground: #2f3430;
+  --bg: #f5f3f0; /* soft warm off-white background */
+  --card-bg: #ffffff; /* clean inset-card panels */
+  --text: #2c2c2c; /* dark charcoal for body text */
+  --muted-text: #666666; /* softer gray for secondary text */
+  --primary: #8fa7a1; /* sage green (brand accent) */
+  --secondary: #cfa07d; /* rose gold accent */
+  --footer-bg: #2a2a2a; /* dark muted band for footer */
+
+  /* Legacy variables for backward compatibility */
+  --page-bg: var(--bg);
+  --card-bg: var(--card-bg);
+  --text: var(--text);
+  --muted: var(--muted-text);
+  --primary: var(--primary);
+  --accent: var(--secondary);
+  --footer-bg: var(--footer-bg);
+  --background: var(--card-bg);
+  --foreground: var(--text);
 }
 
 @theme inline {
@@ -21,7 +36,7 @@
 
 /* Base page styling */
 .site-page {
-  background-color: var(--page-bg);
+  background-color: var(--bg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -45,12 +60,32 @@
 
 /* Curved divider utility */
 .curved-divider {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1111-27.13,1200,52.47V0Z' opacity='.25' fill='%23f5f7f3'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23f5f7f3'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23f5f7f3'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 120px;
+  color: var(
+    --card-bg
+  ); /* this will color the inline svg path because it uses currentColor */
   width: 100%;
+  height: 6.5rem; /* default visual height; adjust at breakpoints */
+  display: block;
+  line-height: 0;
+  transform-origin: center top;
+  will-change: transform;
+}
+
+/* responsive heights */
+@media (min-width: 768px) {
+  .curved-divider {
+    height: 8.5rem;
+  } /* larger on desktop */
+}
+@media (min-width: 1280px) {
+  .curved-divider {
+    height: 11rem;
+  }
+}
+
+/* small shadow/edge smoothing (optional) */
+.curved-divider-shadow {
+  filter: drop-shadow(0 -6px 10px rgba(0, 0, 0, 0.04));
 }
 
 /* Typography defaults */
@@ -68,7 +103,7 @@
       sans-serif;
     color: var(--text);
     line-height: 1.6;
-    background: var(--page-bg);
+    background: var(--bg);
   }
 
   h1,
@@ -94,5 +129,193 @@
 
   h3 {
     font-size: 2rem;
+  }
+}
+
+/* Custom Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 1s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out forwards;
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-twinkle-delayed {
+  animation: twinkle 3s ease-in-out infinite 1s;
+}
+
+.animate-twinkle-slow {
+  animation: twinkle 4s ease-in-out infinite 2s;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+/* Color theme utilities */
+.bg-warm {
+  background-color: var(--bg);
+}
+
+/* Background image for sections after hero */
+.bg-main-sections {
+  background: url('/images/gallery/background-image.jpg') center center / cover
+    no-repeat fixed !important;
+  min-height: 100vh;
+}
+
+.bg-card {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.text-primary {
+  color: var(--text);
+}
+
+.text-muted {
+  color: var(--muted-text);
+}
+
+.text-accent {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+/* Hover effects for cards and buttons */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hover-bg-shift {
+  transition: background-color 0.3s ease;
+}
+
+.hover-bg-shift:hover {
+  background-color: color-mix(in srgb, var(--primary) 10%, var(--card-bg));
+}
+
+/* Button hover states */
+.btn-primary-hover:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: white;
+}
+
+.btn-secondary-hover:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

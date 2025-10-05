@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" fill="none">
+  <!-- Curved Scribble -->
+  <g id="curved">
+    <path d="M10,20 Q30,10 50,20 T90,20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.1" vector-effect="non-scaling-stroke"/>
+  </g>
+  
+  <!-- Zigzag Scribble -->
+  <g id="zigzag">
+    <path d="M10,20 L30,10 L50,20 L70,10 L90,20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.1" vector-effect="non-scaling-stroke"/>
+  </g>
+  
+  <!-- Wave Scribble -->
+  <g id="wave">
+    <path d="M10,20 C20,10 30,30 40,20 C50,10 60,30 70,20 C80,10 90,30 100,20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.1" vector-effect="non-scaling-stroke"/>
+  </g>
+  
+  <!-- Dots Scribble -->
+  <g id="dots">
+    <path d="M10,20 L15,20 M25,20 L30,20 M40,20 L45,20 M55,20 L60,20 M70,20 L75,20 M85,20 L90,20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.1" vector-effect="non-scaling-stroke"/>
+  </g>
+</svg>
+

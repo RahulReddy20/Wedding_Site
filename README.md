@@ -1,36 +1,226 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wedding Site
 
-## Getting Started
+A modern, responsive wedding website built with Next.js 15, featuring an elegant editorial inset-card layout design. The site showcases the couple's story, wedding events, and provides RSVP functionality with beautiful animations and optimized performance.
 
-First, run the development server:
+## 🎨 Design Overview
+
+This wedding site features a unique **editorial inset-card layout** that creates a sophisticated, magazine-like appearance. The main content is contained within a rounded card that sits on a subtle background, creating visual depth and focus.
+
+### Key Design Features
+
+- **Site Shell**: The main content area uses a large rounded card (2.5rem border-radius) with subtle shadows
+- **Curved Dividers**: Custom SVG dividers that create smooth transitions between sections
+- **Gallery Tiles**: Masonry-style layout with decorative scribble accents
+- **Responsive Design**: Optimized for all screen sizes from mobile to ultra-wide displays
+- **Accessibility**: Full support for reduced motion preferences and screen readers
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Local Development
+
+1. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start development server**
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
+
+### Build & Deploy
+
+**Build for production:**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Start production server:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Deploy to Vercel (Recommended):**
 
-## Learn More
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-To learn more about Next.js, take a look at the following resources:
+# Deploy
+vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Or connect your GitHub repo to Vercel for automatic deployments
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Design Tokens & Customization
 
-## Deploy on Vercel
+The site uses CSS custom properties for consistent theming. All design tokens are defined in `src/app/globals.css`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Color Palette
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```css
+:root {
+  --page-bg: #f5f7f3; /* Pale green page background */
+  --card-bg: #ffffff; /* White inset card background */
+  --text: #2f3430; /* Dark charcoal text */
+  --muted: #7a847b; /* Muted secondary text */
+  --primary: #9aa998; /* Dusty sage green accent */
+  --accent: #c9a78c; /* Rose-gold accent color */
+  --footer-bg: #4f544f; /* Dark footer background */
+}
+```
+
+### Site Shell Customization
+
+To adjust the main card appearance:
+
+```css
+.site-shell {
+  border-radius: 2.5rem; /* Adjust corner radius */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    /* Main shadow */ 0 8px 16px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+```
+
+### Typography
+
+- **Headings**: Playfair Display (serif)
+- **Body**: Inter (sans-serif)
+- **Responsive scaling**: Fluid typography with clamp() functions
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js app router
+│   ├── globals.css        # Global styles & design tokens
+│   ├── layout.tsx         # Root layout with fonts
+│   └── page.tsx          # Homepage
+├── components/            # React components
+│   ├── ui/               # Reusable UI components
+│   ├── Hero.tsx         # Hero section with curved divider
+│   ├── Events.tsx       # Wedding events schedule
+│   ├── Story.tsx        # Couple's story timeline
+│   ├── Rsvp.tsx         # RSVP form
+│   └── Footer.tsx       # Site footer
+├── lib/                  # Utilities
+│   ├── siteConfig.ts    # Site content & configuration
+│   └── usePrefersReducedMotion.ts
+└── types/               # TypeScript definitions
+```
+
+## 🎯 Key Components
+
+### Hero Section
+
+- Full-width background image with overlay
+- Curved divider transition to content
+- Animated headline with GSAP
+
+### Events Section
+
+- Card-based layout for wedding events
+- Interactive map links
+- Staggered animations on scroll
+
+### Gallery
+
+- Masonry grid layout
+- Decorative scribble accents
+- Optimized image loading
+
+### Story Timeline
+
+- Vertical timeline design
+- Image-text alternating layout
+- Smooth scroll animations
+
+## 🛠 Development
+
+### Available Scripts
+
+```bash
+npm run dev      # Start development server with Turbopack
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+npm run format   # Format code with Prettier
+```
+
+### Performance Features
+
+- **Image Optimization**: Next.js Image component with WebP support
+- **Font Optimization**: Google Fonts with display=swap
+- **Animation Performance**: GSAP with ScrollTrigger
+- **Bundle Optimization**: Turbopack for faster builds
+
+### Accessibility
+
+- **Reduced Motion**: Respects `prefers-reduced-motion`
+- **Screen Readers**: Proper ARIA labels and semantic HTML
+- **Keyboard Navigation**: Full keyboard accessibility
+- **Color Contrast**: WCAG AA compliant color combinations
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: 320px - 767px
+- **Tablet**: 768px - 1023px
+- **Desktop**: 1024px - 1439px
+- **Large Desktop**: 1440px+
+
+## 🎨 Design Assets
+
+Design assets and SVG files are stored in `/public/assets/design/`:
+
+- `curved-divider.svg` - Hero section divider
+- `scribble-accents.svg` - Gallery decorative elements
+
+## 📸 Image Optimization
+
+### Recommended Image Sizes
+
+**Hero Images:**
+
+- Desktop: 1920x1080px (16:9 aspect ratio)
+- Mobile: 768x432px
+
+**Gallery Images:**
+
+- Large tiles: 800x600px
+- Small tiles: 400x300px
+- Format: WebP with JPEG fallback
+
+### Image Loading Strategy
+
+- Lazy loading for below-the-fold images
+- Priority loading for hero images
+- Responsive images with multiple sizes
+
+## 🔧 Configuration
+
+Site content is managed in `src/lib/siteConfig.ts`. Update the following:
+
+- Couple names and wedding details
+- Event information and venues
+- Story timeline items
+- Gallery images and testimonials
+- RSVP and registry URLs
+
+## 📄 License
+
+Private project - All rights reserved.

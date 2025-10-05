@@ -27,14 +27,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
-        <div className="site-page">
-          <div className="site-shell">
+        <div className="min-h-screen">
+          <header role="banner">
             <TopNav />
-            <main className="site-content">{children}</main>
-          </div>
+          </header>
+          <main role="main" id="main-content">
+            {children}
+          </main>
         </div>
       </body>
     </html>

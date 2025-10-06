@@ -8,7 +8,7 @@ export default function TopNav() {
       {/* Left Logo - RV Monogram */}
       <div className="flex items-center">
         <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm tracking-tight">
-          HR
+          RH
         </div>
       </div>
     </nav>

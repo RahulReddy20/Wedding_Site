@@ -250,10 +250,66 @@
 
 /* Background image for sections after hero */
 .bg-main-sections {
-  background: url('/images/gallery/background-image.jpg') center center / cover
-    no-repeat fixed !important;
+  /* background: url('/images/gallery/background-image.jpg') center center / cover
+    no-repeat fixed !important; */
   min-height: 100vh;
 }
+
+/* Mobile-specific background handling */
+@media (max-width: 768px) {
+  /* .bg-main-sections { */
+  /* background: url('/images/gallery/background-image.jpg') center center /
+      cover no-repeat !important; */
+  /* background-attachment: fixed !important; */
+  /* background-size: 100% 100vh !important; */
+  /* position: relative; */
+  /* } */
+
+  /* Create a fixed background layer that covers the full viewport */
+  .bg-main-sections::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('/images/gallery/background-image.jpg') center center /
+      cover no-repeat;
+    z-index: -1;
+    background-attachment: scroll;
+  }
+}
+
+/* iOS Safari specific fixes */
+/* @supports (-webkit-touch-callout: none) {
+  .bg-main-sections {
+    background: url('/images/gallery/background-image.jpg') center center /
+      cover no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: 100% 100vh !important;
+    position: relative;
+  }
+
+  .bg-main-sections::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('/images/gallery/background-image.jpg') center center /
+      cover no-repeat;
+    z-index: -1;
+    background-attachment: scroll;
+  }
+} */
+
+/* Additional mobile optimizations */
+/* @media (max-width: 768px) {
+  .bg-main-sections {
+    min-height: auto !important;
+  }
+} */
 
 .bg-card {
   background-color: rgba(255, 255, 255, 0.25) !important;

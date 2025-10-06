@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { siteConfig } from '@/lib/siteConfig';
@@ -21,6 +22,75 @@ export default function Events() {
   const eventsHeadingRef = useRef<HTMLHeadingElement>(null);
   const eventTilesRef = useRef<HTMLDivElement[]>([]);
   const prefersReduced = usePrefersReducedMotion();
+  const searchParams = useSearchParams();
+
+  // Shared sorting function for events
+  const sortEventsByDateTime = (events: EventItem[]) => {
+    return [...events].sort((a, b) => {
+      // Parse dates and times for comparison
+      const parseDateTime = (dateTimeStr: string) => {
+        // Extract date and time from strings like "November 16, 2025 from 7 PM onwards"
+        const match = dateTimeStr.match(
+          /(\w+) (\d+), (\d+) (?:at|from) (\d+):?(\d+)?\s*(AM|PM)/i
+        );
+        if (match) {
+          const [, month, day, year, hour, minute = '0', ampm] = match;
+          const monthNum = new Date(`${month} 1, 2000`).getMonth();
+          let hour24 = parseInt(hour);
+          if (ampm.toUpperCase() === 'PM' && hour24 !== 12) hour24 += 12;
+          if (ampm.toUpperCase() === 'AM' && hour24 === 12) hour24 = 0;
+          return new Date(
+            parseInt(year),
+            monthNum,
+            parseInt(day),
+            hour24,
+            parseInt(minute)
+          );
+        }
+        // Fallback for events without specific times
+        const fallbackMatch = dateTimeStr.match(/(\w+) (\d+), (\d+)/);
+        if (fallbackMatch) {
+          const [, month, day, year] = fallbackMatch;
+          const monthNum = new Date(`${month} 1, 2000`).getMonth();
+          return new Date(parseInt(year), monthNum, parseInt(day));
+        }
+        return new Date(0); // Fallback for unparseable dates
+      };
+
+      const dateA = parseDateTime(a.dateTime);
+      const dateB = parseDateTime(b.dateTime);
+      return dateA.getTime() - dateB.getTime();
+    });
+  };
+
+  // Filter events based on URL parameters
+  const getFilteredEvents = () => {
+    const view = searchParams.get('view');
+
+    switch (view) {
+      case 'wedding-only':
+        // Only wedding ceremony
+        return siteConfig.events.filter(
+          (event) => event.id === 'wedding-ceremony'
+        );
+
+      case 'main-events':
+        // Sangeet, haldi, wedding, and reception
+        return siteConfig.events.filter((event) =>
+          ['sangeet', 'haldi', 'wedding-ceremony', 'reception'].includes(
+            event.id
+          )
+        );
+
+      case 'all-events':
+      default:
+        // All events
+        return siteConfig.events;
+    }
+  };
+
+  const filteredEvents = getFilteredEvents();
+  const sortedEvents = sortEventsByDateTime(filteredEvents);
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
@@ -69,7 +139,7 @@ export default function Events() {
               scale: 1,
               duration: 0.8,
               ease: 'power2.out',
-              delay: index * 0.15, // Stagger the animations
+              delay: index * 0.15, // Stagger the animations in chronological order
               scrollTrigger: {
                 trigger: tile,
                 start: 'top 85%',
@@ -109,12 +179,23 @@ export default function Events() {
             ref={eventsHeadingRef}
             className="text-4xl md:text-5xl font-serif font-bold text-center mb-12 text-text"
           >
-            Schedule of Events
+            {(() => {
+              const view = searchParams.get('view');
+              switch (view) {
+                case 'wedding-only':
+                  return 'Wedding Ceremony';
+                case 'main-events':
+                  return 'Main Events';
+                case 'all-events':
+                default:
+                  return 'Schedule of Events';
+              }
+            })()}
           </h2>
 
           {/* Events Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {siteConfig.events.map((event: EventItem, index) => (
+            {sortedEvents.map((event: EventItem, index) => (
               <Card
                 key={event.id}
                 ref={(el) => {

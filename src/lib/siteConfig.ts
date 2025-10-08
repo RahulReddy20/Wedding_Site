@@ -15,7 +15,7 @@ export const siteConfig: SiteConfig = {
       description:
         'Join us for an intimate welcome reception to kick off our wedding weekend.',
       mapQuery: 'Ashva retreat, Hyderabad, Telangana',
-      imageUrl: '/images/events/welcome-reception.jpg',
+      imageUrl: '/images/events/sangeet.png',
     },
     {
       id: 'haldi',
@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
       description:
         'Our wedding ceremony will take place in the beautiful castle courtyard.',
       mapQuery: '17.093364, 81.279088',
-      imageUrl: '/images/events/haldi.jpg',
+      imageUrl: '/images/events/haldi.png',
     },
     {
       id: 'wedding-ceremony',
@@ -38,7 +38,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Black-Tie Optional',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
-      imageUrl: '/images/events/reception.jpg',
+      imageUrl: '/images/events/wedding.png',
     },
     {
       id: 'reception',
@@ -49,7 +49,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Black-Tie Optional',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
-      imageUrl: '/images/events/reception.jpg',
+      imageUrl: '/images/events/reception.png',
     },
     {
       id: 'pellikoduku',
@@ -60,7 +60,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Indian Attire Pastel Colors',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
-      imageUrl: '/images/events/reception.jpg',
+      imageUrl: '/images/events/rec.png',
     },
     {
       id: 'gajula-veduka',
@@ -71,7 +71,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Indian Attire',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
-      imageUrl: '/images/events/gajulu.jpg',
+      imageUrl: '/images/events/gajulu.png',
     },
     {
       id: 'mehandi',
@@ -82,7 +82,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Kalankari Pattern',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
-      imageUrl: '/images/events/mehandi.jpg',
+      imageUrl: '/images/events/mehandi.png',
     },
   ],
   storyItems: [

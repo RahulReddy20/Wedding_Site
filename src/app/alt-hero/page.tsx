@@ -5,7 +5,7 @@ import Story from '@/components/Story';
 import Rsvp from '@/components/Rsvp';
 import Footer from '@/components/Footer';
 
-export default function Home() {
+export default function AltHeroPage() {
   return (
     <>
       <Hero />

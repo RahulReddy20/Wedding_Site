@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import usePrefersReducedMotion from '@/lib/usePrefersReducedMotion';
@@ -15,9 +16,8 @@ interface HeroProps {
   backgroundImageUrl?: string;
 }
 
-export default function Hero({
-  backgroundImageUrl = '/images/hero/hero-image.jpg',
-}: HeroProps) {
+export default function Hero({ backgroundImageUrl }: HeroProps) {
+  const pathname = usePathname();
   const heroRef = useRef<HTMLElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -25,6 +25,23 @@ export default function Hero({
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const curvedDividerRef = useRef<HTMLDivElement>(null);
   const prefersReduced = usePrefersReducedMotion();
+
+  // Determine background image based on URL path
+  const getBackgroundImage = () => {
+    if (backgroundImageUrl) {
+      return backgroundImageUrl; // Use explicitly passed image
+    }
+
+    // Auto-detect based on pathname
+    if (pathname === '/alt-hero') {
+      return '/images/hero/hero2.jpg';
+    }
+
+    // Default to original image for home page and other routes
+    return '/images/hero/italian-venue.jpg';
+  };
+
+  const currentBackgroundImage = getBackgroundImage();
 
   useEffect(() => {
     if (prefersReduced) {
@@ -142,7 +159,7 @@ export default function Hero({
       <div
         ref={backgroundRef}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+        style={{ backgroundImage: `url(${currentBackgroundImage})` }}
         role="img"
         aria-label="Beautiful Italian wedding venue landscape"
         aria-hidden="true"
@@ -161,7 +178,10 @@ export default function Hero({
       </div>
 
       {/* Hero Content with GSAP-controlled animations */}
-      <div className="relative z-10 text-center px-6 max-w-5xl pt-4 md:pt-8 lg:pt-12">
+      <div
+        className="relative z-10 text-center px-6 max-w-5xl pt-4 md:pt-8 lg:pt-12"
+        style={{ marginTop: '-85px' }}
+      >
         <div className="relative -top-10">
           <h1
             ref={headlineRef}

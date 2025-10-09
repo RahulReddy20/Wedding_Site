@@ -62,7 +62,7 @@ export default function Rsvp() {
             <Card className="p-8 text-center group focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 hover-lift hover-bg-shift max-w-md">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-text mb-3">RSVP</h3>
-                <p className="text-muted">
+                <p className="text-primary">
                   Please let us know if you&apos;ll be joining us for our
                   special day.
                 </p>

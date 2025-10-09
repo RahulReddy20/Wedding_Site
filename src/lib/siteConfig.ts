@@ -23,7 +23,7 @@ export const siteConfig: SiteConfig = {
       dateTime: 'November 24, 2025 from 7 AM onwards',
       venueName: 'Home',
       address: 'Jangareddygudem, AP',
-      dressCode: 'Women: Pink , Men: Pistah Green Kurta',
+      dressCode: 'Women: Pink , Men: Pista Green Kurta',
       description:
         'Our wedding ceremony will take place in the beautiful castle courtyard.',
       mapQuery: '17.093364, 81.279088',
@@ -60,7 +60,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Indian Attire Pastel Colors',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
-      imageUrl: '/images/events/rec.png',
+      imageUrl: '/images/events/pellikoduku.png',
     },
     {
       id: 'gajula-veduka',

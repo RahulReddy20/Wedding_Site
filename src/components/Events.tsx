@@ -166,21 +166,21 @@ export default function Events() {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-text">
-              Our Wedding
+              My Wedding
             </h2>
             <p className="text-lg text-muted mb-6">
               A celebration of love and commitment
             </p>
             <div className="max-w-4xl mx-auto">
               <p className="text-base text-muted leading-relaxed mb-4">
-                Join us as we celebrate the union of two souls who found each
-                other in this beautiful journey of life. Our wedding is a
-                reflection of our love story, filled with joy, laughter, and the
-                warmth of family and friends.
+                I invite you to join me as I celebrate the union of two souls
+                who found each other in this beautiful journey of life. My
+                wedding is a reflection of our love story, filled with joy,
+                laughter, and the warmth of family and friends.
               </p>
               <p className="text-base text-muted leading-relaxed">
-                We&apos;re excited to share this special day with you and create
-                memories that will last a lifetime. Your presence would make our
+                I&apos;m excited to share this special day with you and create
+                memories that will last a lifetime. Your presence would make my
                 celebration complete.
               </p>
             </div>

@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import Events from '@/components/Events';
 import Rsvp from '@/components/Rsvp';
 
-export default function AltHeroPage() {
+export default function RhPage() {
   return (
     <>
       <Hero />

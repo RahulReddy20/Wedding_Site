@@ -32,7 +32,7 @@ export default function Hero({ backgroundImageUrl }: HeroProps) {
     }
 
     // Auto-detect based on pathname
-    if (pathname === '/alt-hero') {
+    if (pathname === '/rh') {
       return '/images/hero/hero2.jpg';
     }
 

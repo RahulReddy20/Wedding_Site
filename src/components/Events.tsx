@@ -164,9 +164,22 @@ export default function Events() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-text">
               Our Wedding
             </h2>
-            <p className="text-lg text-muted">
+            <p className="text-lg text-muted mb-6">
               A celebration of love and commitment
             </p>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-base text-muted leading-relaxed mb-4">
+                Join us as we celebrate the union of two souls who found each
+                other in this beautiful journey of life. Our wedding is a
+                reflection of our love story, filled with joy, laughter, and the
+                warmth of family and friends.
+              </p>
+              <p className="text-base text-muted leading-relaxed">
+                We're excited to share this special day with you and create
+                memories that will last a lifetime. Your presence would make our
+                celebration complete.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -188,7 +201,7 @@ export default function Events() {
                   return 'Main Events';
                 case 'all-events':
                 default:
-                  return 'Schedule of Events';
+                  return 'Events';
               }
             })()}
           </h2>

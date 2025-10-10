@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { siteConfig } from '@/lib/siteConfig';
 import usePrefersReducedMotion from '@/lib/usePrefersReducedMotion';
 import Button from './ui/Button';
@@ -10,6 +11,15 @@ export default function Rsvp() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const prefersReduced = usePrefersReducedMotion();
+  const searchParams = useSearchParams();
+
+  // Check if RSVP should be shown based on URL parameter
+  const shouldShowRsvp = searchParams.get('rsvp') === 'true';
+
+  // Don't render if the parameter is not present
+  if (!shouldShowRsvp) {
+    return null;
+  }
 
   useEffect(() => {
     const section = sectionRef.current;

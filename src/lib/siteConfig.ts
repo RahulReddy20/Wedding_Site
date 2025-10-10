@@ -169,6 +169,6 @@ export const siteConfig: SiteConfig = {
       avatar: '/images/testimonials/lisa-mark.jpg',
     },
   ],
-  rsvpUrl: 'https://forms.google.com/rsvp',
+  rsvpUrl: 'https://form.jotform.com/harshavardhan0605/rsvp-form',
   registryUrl: 'https://registry.example.com',
 };

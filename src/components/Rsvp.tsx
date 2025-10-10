@@ -16,12 +16,11 @@ export default function Rsvp() {
   // Check if RSVP should be shown based on URL parameter
   const shouldShowRsvp = searchParams.get('rsvp') === 'true';
 
-  // Don't render if the parameter is not present
-  if (!shouldShowRsvp) {
-    return null;
-  }
-
   useEffect(() => {
+    // Don't run effects if RSVP shouldn't be shown
+    if (!shouldShowRsvp) {
+      return;
+    }
     const section = sectionRef.current;
     const content = contentRef.current;
 
@@ -50,11 +49,16 @@ export default function Rsvp() {
     return () => {
       observer.disconnect();
     };
-  }, [prefersReduced]);
+  }, [prefersReduced, shouldShowRsvp]);
 
   const handleRsvpClick = () => {
     window.open(siteConfig.rsvpUrl, '_blank', 'noopener,noreferrer');
   };
+
+  // Don't render if the parameter is not present
+  if (!shouldShowRsvp) {
+    return null;
+  }
 
   return (
     <section ref={sectionRef} className="py-16 px-6">

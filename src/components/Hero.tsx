@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import usePrefersReducedMotion from '@/lib/usePrefersReducedMotion';
-import CurvedDivider from './CurvedDivider';
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {

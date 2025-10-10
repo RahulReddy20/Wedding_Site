@@ -1,9 +1,7 @@
 import { Suspense } from 'react';
 import Hero from '@/components/Hero';
 import Events from '@/components/Events';
-import Story from '@/components/Story';
 import Rsvp from '@/components/Rsvp';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -22,7 +20,17 @@ export default function Home() {
           <Events />
         </Suspense>
         {/* <Story /> */}
-        <Rsvp />
+        <Suspense
+          fallback={
+            <div className="py-16 px-6">
+              <div className="max-w-4xl mx-auto text-center">
+                <div className="text-center">Loading RSVP...</div>
+              </div>
+            </div>
+          }
+        >
+          <Rsvp />
+        </Suspense>
         {/* <Footer /> */}
       </div>
     </>

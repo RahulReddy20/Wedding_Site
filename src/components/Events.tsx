@@ -10,7 +10,6 @@ import usePrefersReducedMotion from '@/lib/usePrefersReducedMotion';
 import Card from './ui/Card';
 import Button from './ui/Button';
 import MapLink from './MapLink';
-import FeaturedContent from './FeaturedContent';
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -83,9 +82,14 @@ export default function Events() {
         );
 
       case 'all-events':
-      default:
         // All events
         return siteConfig.events;
+
+      default:
+        // Default: Only wedding ceremony
+        return siteConfig.events.filter(
+          (event) => event.id === 'wedding-ceremony'
+        );
     }
   };
 
@@ -175,7 +179,7 @@ export default function Events() {
                 warmth of family and friends.
               </p>
               <p className="text-base text-muted leading-relaxed">
-                We're excited to share this special day with you and create
+                We&apos;re excited to share this special day with you and create
                 memories that will last a lifetime. Your presence would make our
                 celebration complete.
               </p>
@@ -200,6 +204,7 @@ export default function Events() {
                 case 'main-events':
                   return 'Main Events';
                 case 'all-events':
+                  return 'All Events';
                 default:
                   return 'Events';
               }

@@ -80,7 +80,23 @@ export default function Events() {
             event.id
           )
         );
-
+      case 'wed-reception':
+        //wedding, and reception
+        return siteConfig.events.filter((event) =>
+          ['wedding-ceremony', 'reception'].includes(event.id)
+        );
+      case 'sangeet':
+        // Sangeet
+        return siteConfig.events.filter((event) =>
+          ['sangeet'].includes(event.id)
+        );
+      case 'side-events':
+        // Sangeet
+        return siteConfig.events.filter((event) =>
+          ['pellikoduku', 'gajula-veduka', 'mehandi', 'haldi'].includes(
+            event.id
+          )
+        );
       case 'all-events':
         // All events
         return siteConfig.events;
@@ -173,13 +189,13 @@ export default function Events() {
             </p>
             <div className="max-w-4xl mx-auto">
               <p className="text-base text-muted leading-relaxed mb-4">
-                I invite you to join me as I celebrate the union of two souls
+                We invite you to join me as I celebrate the union of two souls
                 who found each other in this beautiful journey of life. My
                 wedding is a reflection of our love story, filled with joy,
                 laughter, and the warmth of family and friends.
               </p>
               <p className="text-base text-muted leading-relaxed">
-                I&apos;m excited to share this special day with you and create
+                We are excited to share this special day with you and create
                 memories that will last a lifetime. Your presence would make my
                 celebration complete.
               </p>

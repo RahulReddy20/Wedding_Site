@@ -341,7 +341,7 @@ export default function Events() {
 
                   {/* Dress Code */}
                   <p className="text-sm text-primary mb-4 font-medium">
-                    {event.dressCode}
+                    Dress Code: {event.dressCode}
                   </p>
 
                   {/* Description */}

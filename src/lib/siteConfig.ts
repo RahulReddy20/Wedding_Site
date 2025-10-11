@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
       dateTime: 'November 26, 2025 at 9:21 AM',
       venueName: 'Taj Krishna Banjara Hills',
       address: 'Hyderabad, TS',
-      dressCode: 'Black-Tie Optional',
+      dressCode: '',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
       imageUrl: '/images/events/wedding.png',

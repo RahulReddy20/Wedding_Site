@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import usePrefersReducedMotion from '@/lib/usePrefersReducedMotion';
+import { siteConfig } from '@/lib/siteConfig';
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
@@ -17,6 +18,7 @@ interface HeroProps {
 
 export default function Hero({ backgroundImageUrl }: HeroProps) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const heroRef = useRef<HTMLElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -41,6 +43,49 @@ export default function Hero({ backgroundImageUrl }: HeroProps) {
   };
 
   const currentBackgroundImage = getBackgroundImage();
+
+  // Get the appropriate date based on view parameter
+  const getDisplayDate = () => {
+    const view = searchParams.get('view');
+
+    switch (view) {
+      case 'sangeet':
+        // Find the sangeet event and return its date
+        const sangeetEvent = siteConfig.events.find(
+          (event) => event.id === 'sangeet'
+        );
+        return sangeetEvent
+          ? sangeetEvent.dateTime.split(' ').slice(0, 3).join(' ').toUpperCase()
+          : 'NOVEMBER 16, 2025';
+      case 'haldi':
+        const haldiEvent = siteConfig.events.find(
+          (event) => event.id === 'haldi'
+        );
+        return haldiEvent
+          ? haldiEvent.dateTime.split(' ').slice(0, 3).join(' ').toUpperCase()
+          : 'NOVEMBER 24, 2025';
+      case 'wedding-ceremony':
+        const weddingEvent = siteConfig.events.find(
+          (event) => event.id === 'wedding-ceremony'
+        );
+        return weddingEvent
+          ? weddingEvent.dateTime.split(' ').slice(0, 3).join(' ').toUpperCase()
+          : 'NOVEMBER 26, 2025';
+      case 'reception':
+        const receptionEvent = siteConfig.events.find(
+          (event) => event.id === 'reception'
+        );
+        return receptionEvent
+          ? receptionEvent.dateTime
+              .split(' ')
+              .slice(0, 3)
+              .join(' ')
+              .toUpperCase()
+          : 'NOVEMBER 30, 2025';
+      default:
+        return 'NOVEMBER 26, 2025'; // Default wedding date
+    }
+  };
 
   useEffect(() => {
     if (prefersReduced) {
@@ -226,7 +271,7 @@ export default function Hero({ backgroundImageUrl }: HeroProps) {
               letterSpacing: '0.05em',
             }}
           >
-            NOVEMBER 26, 2025
+            {getDisplayDate()}
           </p>
         </div>
 

@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Cocktail Attire',
       description:
         'Join us for an intimate welcome reception to kick off our wedding weekend.',
-      mapQuery: 'Ashva retreat, Hyderabad, Telangana',
+      mapLink: 'https://maps.app.goo.gl/qgruCTAsCezSgAyj9',
       imageUrl: '/images/events/sangeet.png',
     },
     {
@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
       dressCode: 'Women: Pink , Men: Pista Green Kurta',
       description:
         'Our wedding ceremony will take place in the beautiful castle courtyard.',
-      mapQuery: '17.093364, 81.279088',
+      mapLink: 'https://maps.google.com/?q=17.093364,81.279088',
       imageUrl: '/images/events/haldi.png',
     },
     {
@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
       address: 'Hyderabad, TS',
       dressCode: 'Casual',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
-      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      mapLink: 'https://maps.app.goo.gl/YPH67dWiQQSwwmJ79',
       imageUrl: '/images/events/wedding.png',
     },
     {
@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
       address: 'Jangareddygudem, AP',
       dressCode: 'Black-Tie Optional',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
-      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      mapLink: 'https://maps.google.com/?q=17.093364,81.279088',
       imageUrl: '/images/events/reception.png',
     },
     {
@@ -59,7 +59,7 @@ export const siteConfig: SiteConfig = {
       address: 'Jangareddygudem, AP',
       dressCode: 'Indian Attire Pastel Colors',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
-      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      mapLink: 'https://maps.google.com/?q=17.093364,81.279088',
       imageUrl: '/images/events/pellikoduku.png',
     },
     {
@@ -70,7 +70,7 @@ export const siteConfig: SiteConfig = {
       address: 'Jangareddygudem, AP',
       dressCode: 'Indian Attire',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
-      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      mapLink: 'https://maps.google.com/?q=17.093364,81.279088',
       imageUrl: '/images/events/gajulu.png',
     },
     {
@@ -81,7 +81,7 @@ export const siteConfig: SiteConfig = {
       address: 'Jangareddygudem, AP',
       dressCode: 'Kalankari Pattern',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
-      mapQuery: 'Taj Krishna Banjara Hills, Hyderabad, Telangana',
+      mapLink: 'https://maps.google.com/?q=17.093364,81.279088',
       imageUrl: '/images/events/mehandi.png',
     },
   ],

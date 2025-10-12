@@ -7,15 +7,19 @@ interface MapLinkProps {
 }
 
 /**
- * MapLink component that creates a Google Maps URL from an address
- * and opens it in a new tab with proper security attributes
+ * MapLink component that uses direct Google Maps URLs
+ * and opens them in a new tab with proper security attributes
  */
 export default function MapLink({
   address,
   children,
   className = '',
 }: MapLinkProps) {
-  const googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
+  // If the address is already a full URL, use it directly
+  // Otherwise, create a Google Maps URL from the address
+  const googleMapsUrl = address.startsWith('http')
+    ? address
+    : `https://maps.google.com/?q=${encodeURIComponent(address)}`;
 
   return (
     <a

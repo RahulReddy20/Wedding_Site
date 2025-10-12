@@ -10,7 +10,7 @@ export interface EventItem {
   address: string;
   dressCode: string;
   description: string;
-  mapQuery: string;
+  mapLink: string;
   imageUrl: string;
 }
 

@@ -40,7 +40,7 @@ const textViewConfig = {
   },
   'wedding-reception': {
     title: 'Wedding & Reception',
-    subtitle: 'Wedding ceremony and reception',
+    subtitle: '',
     content: {
       paragraph1:
         'We cordially invite you to the wedding ceremony and reception of our beloved son Harsha. We would be honored to have you witness this sacred union and celebrate with us.',
@@ -60,7 +60,7 @@ const textViewConfig = {
   },
   traditional: {
     title: 'Traditional Ceremonies',
-    subtitle: 'Traditional pre-wedding ceremonies',
+    subtitle: '',
     content: {
       paragraph1:
         'We invite you to join us for the traditional pre-wedding ceremonies of our son Harsha. We would be honored to have you witness these beautiful cultural traditions.',
@@ -70,7 +70,7 @@ const textViewConfig = {
   },
   complete: {
     title: 'All Wedding Events',
-    subtitle: 'Complete wedding celebrations',
+    subtitle: '',
     content: {
       paragraph1:
         "We are overjoyed to invite you to all the celebrations of our son Harsha's wedding. We would be honored to have you join us for the complete wedding festivities.",
@@ -351,7 +351,7 @@ export default function Events() {
 
                   {/* View on Map Button */}
                   <div className="mt-auto">
-                    <MapLink address={event.mapQuery}>
+                    <MapLink address={event.mapLink}>
                       <Button
                         variant="outline"
                         className="w-full btn-secondary-hover"

@@ -5,7 +5,15 @@ import Rsvp from '@/components/Rsvp';
 
 export default function Home() {
   return (
-    <>
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-lg">Loading...</div>
+          </div>
+        </div>
+      }
+    >
       <Hero />
       <div className="bg-main-sections">
         <Suspense
@@ -33,6 +41,6 @@ export default function Home() {
         </Suspense>
         {/* <Footer /> */}
       </div>
-    </>
+    </Suspense>
   );
 }

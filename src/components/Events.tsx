@@ -83,9 +83,9 @@ const textViewConfig = {
     subtitle: 'A celebration of love and commitment',
     content: {
       paragraph1:
-        'We invite you to join us as we celebrate the union of our beloved son Harsha and his beautiful bride Rishika. We would be honored to have you witness this blessed occasion.',
+        'I am thrilled to invite you to join Rishika and me as we celebrate our union in marriage. I would be honored to have you witness this blessed occasion and share in our joy.',
       paragraph2:
-        'We are excited to share this special day with you and create memories that will last a lifetime. Your presence would make our celebration complete.',
+        'I am excited to share this special day with you and create memories that will last a lifetime. Your presence would make our celebration complete and mean the world to us.',
     },
   },
 };

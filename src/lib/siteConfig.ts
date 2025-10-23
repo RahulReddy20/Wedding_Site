@@ -46,7 +46,7 @@ export const siteConfig: SiteConfig = {
       dateTime: 'November 30, 2025 from 7 PM onwards',
       venueName: 'Home',
       address: 'Jangareddygudem, AP',
-      dressCode: 'Black-Tie Optional',
+      dressCode: 'Indo-Western',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapLink: 'https://maps.google.com/?q=17.093364,81.279088',
       imageUrl: '/images/events/reception.png',

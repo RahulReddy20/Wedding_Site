@@ -79,13 +79,13 @@ const textViewConfig = {
     },
   },
   default: {
-    title: 'My Wedding',
-    subtitle: 'A celebration of love and commitment',
+    title: '',
+    subtitle: '',
     content: {
       paragraph1:
-        'I am thrilled to invite you to join Rishika and me as we celebrate our union in marriage. I would be honored to have you witness this blessed occasion and share in our joy.',
+        'With immense joy and gratitude in our hearts, Rishika and I warmly invite you to grace the auspicious occasion of our wedding. As we step into a new chapter of our lives, we would love nothing more than to have you by our side.',
       paragraph2:
-        'I am excited to share this special day with you and create memories that will last a lifetime. Your presence would make our celebration complete and mean the world to us.',
+        'Join us in a celebration of love, as we look forward to sharing this special day with you and creating memories that will be treasured forever.',
     },
   },
 };
@@ -271,10 +271,16 @@ export default function Events() {
               {getTextConfig().subtitle}
             </p>
             <div className="max-w-4xl mx-auto">
-              <p className="text-base text-muted leading-relaxed mb-4">
+              <p
+                className="text-base text-muted leading-relaxed mb-4"
+                style={{ fontWeight: 'bold' }}
+              >
                 {getTextConfig().content.paragraph1}
               </p>
-              <p className="text-base text-muted leading-relaxed">
+              <p
+                className="text-base text-muted leading-relaxed"
+                style={{ fontWeight: 'bold' }}
+              >
                 {getTextConfig().content.paragraph2}
               </p>
             </div>

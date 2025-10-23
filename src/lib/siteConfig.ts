@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
       dateTime: 'November 26, 2025 at 9:21 AM',
       venueName: 'Taj Krishna Banjara Hills',
       address: 'Hyderabad, TS',
-      dressCode: 'Casual',
+      dressCode: 'Indian Attire',
       description: 'Dinner, dancing, and celebration in the grand ballroom.',
       mapLink: 'https://maps.app.goo.gl/YPH67dWiQQSwwmJ79',
       imageUrl: '/images/events/wedding.png',

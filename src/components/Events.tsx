@@ -78,6 +78,16 @@ const textViewConfig = {
         'Your presence throughout our celebrations would make this special time even more meaningful for our family.',
     },
   },
+  text2: {
+    title: '',
+    subtitle: '',
+    content: {
+      paragraph1:
+        'With immense joy and gratitude in our hearts, Harsha and I warmly invite you to grace the auspicious occasion of our wedding. As we step into a new chapter of our lives, we would love nothing more than to have you by our side.',
+      paragraph2:
+        'Join us in a celebration of love, as we look forward to sharing this special day with you and creating memories that will be treasured forever.',
+    },
+  },
   default: {
     title: '',
     subtitle: '',
@@ -182,7 +192,30 @@ export default function Events() {
         );
       case 'all-events':
         // All events
-        return siteConfig.events;
+        return siteConfig.events.filter((event) =>
+          [
+            'sangeet',
+            'wedding-ceremony',
+            'reception',
+            'pellikoduku',
+            'gajula-veduka',
+            'mehandi',
+            'haldi',
+          ].includes(event.id)
+        );
+
+      case 'my-events':
+        // All events
+        return siteConfig.events.filter((event) =>
+          [
+            'sangeet',
+            'wedding-ceremony',
+            'reception',
+            'pellikuthuru',
+            'mehandi2',
+            'haldi2',
+          ].includes(event.id)
+        );
 
       default:
         // Default: Only wedding ceremony
